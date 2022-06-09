@@ -13,9 +13,9 @@
 
 int	ft_pwd(t_minishell *shell)
 {
-	char	buf[PATH_MAX + 1];
+	char	buf[PATH_MAX];
 
-	if (!getcwd(buf, PATH_MAX + 1))
+	if (!getcwd(buf, PATH_MAX))
 	{
 		ft_putstr_fd(strerror(errno), STDOUT_FILENO);
 		shell->exit_status = 128;

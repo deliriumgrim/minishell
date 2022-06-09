@@ -16,4 +16,9 @@ void	ft_realloc(void **line, char *new_elem)
 {
 	free((char *)*line);
 	*line = ft_strdup(new_elem);
+	if (!*line)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 }

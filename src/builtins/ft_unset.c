@@ -94,6 +94,11 @@ int	ft_unset(t_minishell *shell)
 	if (norm_help(shell))
 		return (TRUE);
 	key = ft_strdup(shell->exec->command[1]);
+	if (!key)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	unset_env_check(shell, key);
 	shell->exit_status = 0;
 	free(key);

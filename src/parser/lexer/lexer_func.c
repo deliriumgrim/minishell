@@ -25,6 +25,11 @@ int	search_quetos(t_minishell *shell, int *i, char type, int key_t)
 	else if (!shell->line[j] && type == '\"')
 		return (ft_error(E_UQT, "\""));
 	tmp = ft_substr(shell->line, *i + 1, j - *i - 1);
+	if (!tmp)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	push_token(shell, key_t, tmp);
 	*i = j;
 	return (FALSE);
@@ -58,6 +63,11 @@ int	get_dollar(t_minishell *shell, int *i, int key_t)
 	while (ft_isdollar(shell->line[j]))
 		j++;
 	tmp = ft_substr(shell->line, *i, j - *i);
+	if (!tmp)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	push_token(shell, key_t, tmp);
 	*i = j - 1;
 	return (FALSE);
@@ -72,6 +82,11 @@ int	get_word(t_minishell *shell, int *i, int key_t)
 	while (ft_isvalid(shell->line[j]) && shell->line[j])
 		j++;
 	tmp = ft_substr(shell->line, *i, j - *i);
+	if (!tmp)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	push_token(shell, key_t, tmp);
 	if (*i == j)
 		return (FALSE);

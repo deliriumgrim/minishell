@@ -29,7 +29,7 @@ void	change_env(t_minishell *shell, char *old_path, char *new_path)
 
 static int	norm_help(t_minishell *shell, char *new_path)
 {
-	if (!getcwd(new_path, PATH_MAX + 1))
+	if (!getcwd(new_path, PATH_MAX))
 	{
 		shell->exit_status = 1;
 		perror("minishell:");
@@ -40,12 +40,12 @@ static int	norm_help(t_minishell *shell, char *new_path)
 
 int	ft_cd(t_minishell *shell)
 {
-	char	old_path[PATH_MAX + 1];
-	char	new_path[PATH_MAX + 1];
+	char	old_path[PATH_MAX];
+	char	new_path[PATH_MAX];
 
 	if (!shell->exec->command[1])
 		return (TRUE);
-	if (!getcwd(old_path, PATH_MAX + 1))
+	if (!getcwd(old_path, PATH_MAX))
 	{
 		shell->exit_status = 1;
 		perror("minishell:");

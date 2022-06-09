@@ -30,6 +30,11 @@ char	*take_value(char *env)
 	k = 0;
 	i = len_to_sep(env) + 1;
 	tmp = ft_calloc(ft_strlen(&env[i]) + 1, sizeof(char *));
+	if (!tmp)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	while (env[i])
 		tmp[k++] = env[i++];
 	tmp[k] = '\0';
@@ -45,6 +50,11 @@ char	*take_key(char *env)
 	i = -1;
 	len = len_to_sep(env);
 	tmp = ft_calloc(len + 1, sizeof(char *));
+	if (!tmp)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	while (++i < len)
 		tmp[i] = env[i];
 	tmp[i] = '\0';

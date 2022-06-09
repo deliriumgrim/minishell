@@ -25,16 +25,40 @@ void	return_full_path(char *path, t_minishell *shell, t_elem *tmp_c)
 	char	*tmp;
 
 	tmp = ft_strjoin(path, "/");
+	if (!tmp)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	shell->exec->path = ft_strjoin(tmp, (char *)tmp_c->value);
+	if (!shell->exec->path)
+	{
+		ft_error(E_MA, NULL);
+		exit(-1);
+	}
 	free(tmp);
 }
 
 void	find_path_help(t_elem *tmp, t_minishell *shell, char **paths)
 {
 	if (*(char *)tmp->value == '.' || *(char *)tmp->value == '/')
+	{
 		shell->exec->path = ft_strdup(tmp->value);
+		if (!shell->exec->path)
+		{
+			ft_error(E_MA, NULL);
+			exit(-1);
+		}
+	}
 	else
+	{
 		shell->exec->path = ft_strdup("");
+		if (!shell->exec->path)
+		{
+			ft_error(E_MA, NULL);
+			exit(-1);
+		}
+	}
 	ft_freex2arr(paths);
 }
 

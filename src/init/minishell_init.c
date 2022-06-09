@@ -14,6 +14,11 @@
 void	minishell_init(t_minishell *shell)
 {
 	shell->exec = (t_execve *) malloc(sizeof(t_execve));
+	if (!shell->exec)
+	{
+		ft_error(E_MA, NULL);
+		exit(1);
+	}
 	shell->status = 1;
 	shell->exit_status = 0;
 	shell->rebuild_env_status = 0;

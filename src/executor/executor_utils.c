@@ -65,13 +65,11 @@ void	ft_exit_status(t_minishell *shell)
 	{
 		exit_status = WEXITSTATUS(shell->exit_status);
 		shell->exit_status = exit_status;
-		printf("exit_status: %d\n", shell->exit_status);
 	}
 	else if (WIFSIGNALED(shell->exit_status))
 	{
 		exit_status = 128 + WTERMSIG(shell->exit_status);
 		shell->exit_status = exit_status;
-		printf("exit_status: %d\n", shell->exit_status);
 	}
 }
 

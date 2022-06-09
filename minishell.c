@@ -26,7 +26,7 @@ int	main(int argc, char **argv, char **envp)
 		shell.line = readline(PROMPT);
 		if (!shell.line)
 		{
-			ft_putstr_fd("exit\n", 1);
+			ft_putstr_fd("exit\n", STDOUT_FILENO);
 			exit (shell.exit_status);
 		}
 		add_history(shell.line);

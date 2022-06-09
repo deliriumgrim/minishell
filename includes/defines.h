@@ -17,6 +17,7 @@
 
 #  define PROMPT "minishell_1.0$> "
 #  define E_UQT "minishell: unclosed quetos type `"
+#  define E_MA "minishell: malloc failed"
 #  define E_US "minishell: undefined symbol `"
 #  define E_SE  "minishell: syntax error"
 #  define E_CNF "minishell: command not found `"

@@ -31,8 +31,8 @@ int	heredoc_normhelp(t_minishell *shell, t_elem *token, char *line)
 	ft_signals_heredoc();
 	while (1)
 	{
-		ft_putstr_fd("> ", 1);
-		line = get_next_line(0);
+		ft_putstr_fd("> ", STDOUT_FILENO);
+		line = get_next_line(STDIN_FILENO);
 		if (!line)
 			exit(0);
 		join = ft_strjoin((char *)token->value, "\n");

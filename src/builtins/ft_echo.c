@@ -27,12 +27,12 @@ int	ft_echo(t_minishell *shell)
 	}
 	while (shell->exec->command[++i])
 	{
-		ft_putstr_fd(shell->exec->command[i], 1);
+		ft_putstr_fd(shell->exec->command[i], STDOUT_FILENO);
 		if (shell->exec->command[i + 1])
-			ft_putchar_fd(' ', 1);
+			ft_putchar_fd(' ', STDOUT_FILENO);
 	}
 	if (flag)
-		ft_putchar_fd('\n', 1);
+		ft_putchar_fd('\n', STDOUT_FILENO);
 	shell->exit_status = 0;
 	return (TRUE);
 }

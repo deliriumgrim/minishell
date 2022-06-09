@@ -19,11 +19,11 @@ void	write_export_lines(t_minishell *shell)
 	tmp = shell->env;
 	while (tmp)
 	{
-		ft_putstr_fd("declare -x ", 1);
-		ft_putstr_fd((char *)tmp->key, 1);
-		ft_putchar_fd('=', 1);
-		ft_putstr_fd((char *)tmp->value, 1);
-		ft_putchar_fd('\n', 1);
+		ft_putstr_fd("declare -x ", STDOUT_FILENO);
+		ft_putstr_fd((char *)tmp->key, STDOUT_FILENO);
+		ft_putchar_fd('=', STDOUT_FILENO);
+		ft_putstr_fd((char *)tmp->value, STDOUT_FILENO);
+		ft_putchar_fd('\n', STDOUT_FILENO);
 		tmp = tmp->next;
 	}
 }

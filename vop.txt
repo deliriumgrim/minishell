@@ -1,0 +1,5 @@
+ft_pwd почему + 1 ?  BUF_PATH
+heredoc.c ft_signals в экзите -1
+executor utils.c в экзите -1
+minishell_init.c защитить malloc
+minishell.c exit -1

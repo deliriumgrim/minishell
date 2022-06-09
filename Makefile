@@ -37,7 +37,6 @@ SRC			=	minishell.c \
 				src/executor/executor_utils.c \
 				src/executor/find_path.c \
 				libs/get_next_line/get_next_line.c \
-				libs/get_next_line/get_next_line_utils.c \
 
 OBJ			=	$(patsubst %.c,%.o,$(SRC))
 
@@ -59,10 +58,10 @@ lib		:
 	make -C $(LIB_PATH) all
 
 $(NAME): $(OBJ) libs/libft/libft.a
-	$(CC) $(CFLAGS) $(OBJ) -Llibs/libft -lft -fsanitize=address -o $@ $(F_READLINE)
+	$(CC) $(CFLAGS) $(OBJ) -Llibs/libft -lft -o $@ $(F_READLINE)
 
 %.o: %.c $(HEADERS) Makefile
-	$(CC) $(CFLAGS) -c $< -fsanitize=address -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 re: fclean all
 

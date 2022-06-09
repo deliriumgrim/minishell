@@ -15,9 +15,7 @@
 
 # include "../../includes/minishell.h"
 
-# define FD_MAX 10243
 # define BUFFER_SIZE 1
 
 char	*get_next_line(int fd);
-char	*prov(char const *s, unsigned int start, size_t len);
 #endif

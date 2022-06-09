@@ -64,22 +64,22 @@ FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-%.o: %.c libft.h
-	@gcc $(FLAGS) -c $< -o $@
+%.o: %.c libft.h Makefile
+	gcc $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
+	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
 
 bonus: $(OBJECTS) $(OBJECTS_BONUS)
-	@ar rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
-	@ranlib $(NAME)
+	ar rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
+	ranlib $(NAME)
 
 clean:
-	@rm -f $(OBJECTS) $(OBJECTS_BONUS)
+	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

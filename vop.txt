@@ -3,3 +3,8 @@ heredoc.c ft_signals в экзите -1
 executor utils.c в экзите -1
 minishell_init.c защитить malloc
 minishell.c exit -1
+find_path.c добавил условие 82 строка
+
+env не должен запускаться при unset PATH
+
+убрал условие с доларом в utils.c на 82 строке

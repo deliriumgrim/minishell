@@ -77,9 +77,12 @@ void	find_path(t_minishell *shell, t_elem *token)
 	if (!tmp_env || *(char *)tmp_env->value == '\0')
 	{
 		tmp_token = token;
-		while (ft_istoken(tmp_token->key_t))
+		while (tmp_token && ft_istoken(tmp_token->key_t))
 			tmp_token = tmp_token->next;
-		shell->exec->path = ft_strjoin("./", tmp_token->value);
+		if (!tmp_token)
+			shell->exec->path = NULL;
+		else
+			shell->exec->path = ft_strdup(tmp_token->value);
 	}
 	else
 		check_path(shell, tmp_env, token);

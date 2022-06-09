@@ -81,8 +81,6 @@ void	find_dollar(t_minishell *shell, char **str, int i)
 	char	*tmp_3;
 
 	j = i + 1;
-	if (!(*str)[j])
-		return ;
 	norm_help_dollar(str, &j);
 	tmp = ft_substr(*str, i + 1, j - i - 1);
 	tmp_3 = search_env(shell, tmp);

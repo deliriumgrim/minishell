@@ -20,7 +20,7 @@
 #  define E_MA "minishell: malloc failed"
 #  define E_US "minishell: undefined symbol `"
 #  define E_SE  "minishell: syntax error"
-#  define E_CNF "minishell: command not found `"
+#  define E_CNF "minishell: No such file or directory"
 #  define E_PIE "minishell: pipe init error"
 #  define E_SAE "minishell: signal accept error"
 #  define E_OF "minishell: open file failed"

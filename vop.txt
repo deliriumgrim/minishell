@@ -5,6 +5,7 @@ minishell_init.c защитить malloc
 minishell.c exit -1
 find_path.c добавил условие 82 строка
 
-env не должен запускаться при unset PATH
+env теперь не работает при отключенном PATH
 
 убрал условие с доларом в utils.c на 82 строке
+

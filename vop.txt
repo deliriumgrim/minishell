@@ -1,9 +1,0 @@
-
-heredoc.c ft_signals в экзите -1
-executor utils.c в экзите -1
-minishell.c exit -1
-find_path.c добавил условие 82 строка
-
-
-убрал условие с доларом в utils.c на 82 строке
-

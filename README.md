@@ -1,3 +1,5 @@
+All information and requirements for the project are in the
+[subject](https://github.com/deliriumgrim/minishell/blob/main/en.subject.pdf)
 # minishell
 The objective of this project is to create a simple shell and learn a lot about processes and file descriptors
 
